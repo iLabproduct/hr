@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     fetchAuthToken(function(newToken) {
         const request = new XMLHttpRequest();
-        const apiUrl = `https://ats-external-api.kariyer.net/hrlink-service/api/job/getjobdetail/${jobId}`;
+        const apiUrl = `aHR0cHM6Ly9hdHMtZXh0ZXJuYWwtYXBpLmthcml5ZXIubmV0L2hybGluay1zZXJ2aWNlL2FwaS9qb2IvZ2V0am9iZGV0YWlsLw==${jobId}`;
 
         request.open('GET', apiUrl, true);
         request.setRequestHeader('Authorization', `Bearer ${newToken}`);
