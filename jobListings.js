@@ -1,9 +1,13 @@
 (function () {
-    const authTokenUrl = 'aHR0cHM6Ly9hdHMtZXh0ZXJuYWwtYXBpLmthcml5ZXIubmV0L2F1dGgvdG9rZW4=';
-    const jobFilterParametersUrl = 'aHR0cHM6Ly9hdHMtZXh0ZXJuYWwtYXBpLmthcml5ZXIubmV0L2hybGluay1zZXJ2aWNlL2FwaS9qb2Ivam9iZmlsdGVycGFyYW1ldGVycw==';
-    const jobSearchUrl = 'aHR0cHM6Ly9hdHMtZXh0ZXJuYWwtYXBpLmthcml5ZXIubmV0L2hybGluay1zZXJ2aWNlL2FwaS9qb2Ivc2VhcmNo';
+    const url1 = 'aHR0cHM6Ly9hdHMtZXh0ZXJuYWwtYXBpLmthcml5ZXIubmV0L2F1dGgvdG9rZW4=';
+    const url2 = 'aHR0cHM6Ly9hdHMtZXh0ZXJuYWwtYXBpLmthcml5ZXIubmV0L2hybGluay1zZXJ2aWNlL2FwaS9qb2Ivam9iZmlsdGVycGFyYW1ldGVycw==';
+    const url3 = 'aHR0cHM6Ly9hdHMtZXh0ZXJuYWwtYXBpLmthcml5ZXIubmV0L2hybGluay1zZXJ2aWNlL2FwaS9qb2Ivc2VhcmNo';
     const profileId = 1898;
-    
+
+    var authTokenUrl= atob(url1);
+    var jobFilterParametersUrl= atob(url2);
+    var jobSearchUrl= atob(url3);
+
  function formatDate(dateString) {
     const turkishMonths = [
       'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
@@ -93,7 +97,8 @@
 
     function fetchAndDisplayPostings(token, jobData) {
         let request = new XMLHttpRequest();
-        let apiUrl = 'aHR0cHM6Ly9hdHMtZXh0ZXJuYWwtYXBpLmthcml5ZXIubmV0L2hybGluay1zZXJ2aWNlL2FwaS9qb2Ivc2VhcmNo';
+        let url4 = 'aHR0cHM6Ly9hdHMtZXh0ZXJuYWwtYXBpLmthcml5ZXIubmV0L2hybGluay1zZXJ2aWNlL2FwaS9qb2Ivc2VhcmNo';
+        var apiUrl = atob(url4);
         let payload = {
             profileIds: [profileId],
             cities: jobData.selectedCity ? [jobData.selectedCity] : [],
@@ -149,7 +154,8 @@
 
     function fetchJobDetails(jobId, sampleStyle, cardContainer) {
         let request = new XMLHttpRequest();
-        let apiUrl = `aHR0cHM6Ly9hdHMtZXh0ZXJuYWwtYXBpLmthcml5ZXIubmV0L2hybGluay1zZXJ2aWNlL2FwaS9qb2IvZ2V0am9iZGV0YWlsLw==${jobId}`;
+        let url5 = `aHR0cHM6Ly9hdHMtZXh0ZXJuYWwtYXBpLmthcml5ZXIubmV0L2hybGluay1zZXJ2aWNlL2FwaS9qb2IvZ2V0am9iZGV0YWlsLw==${jobId}`;
+        var apiUrl = atob(url5);
         request.open('GET', apiUrl, true);
         request.setRequestHeader('Content-Type', 'application/json');
 
