@@ -99,8 +99,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     fetchAuthToken(function(newToken) {
         const request = new XMLHttpRequest();
-        const Url2 = `aHR0cHM6Ly9hdHMtZXh0ZXJuYWwtYXBpLmthcml5ZXIubmV0L2hybGluay1zZXJ2aWNlL2FwaS9qb2IvZ2V0am9iZGV0YWlsLw==${jobId}`;
-        var apiUrl = atob(Url2);
+        var url5= 'aHR0cHM6Ly9hdHMtZXh0ZXJuYWwtYXBpLmthcml5ZXIubmV0L2hybGluay1zZXJ2aWNlL2FwaS9qb2IvZ2V0am9iZGV0YWlsLw==';
+        var url6= atob (url5);
+        const apiUrl = `${url6}${jobId}`;
 
         request.open('GET', apiUrl, true);
         request.setRequestHeader('Authorization', `Bearer ${newToken}`);
