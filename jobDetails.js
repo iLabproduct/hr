@@ -40,7 +40,7 @@ function fetchAuthToken(callback) {
     let request = new XMLHttpRequest();
 
     // Define the URL of the authentication endpoint
-    let authUrl = 'https://ats-external-api.kariyer.net/auth/token';
+    let authUrl = 'aHR0cHM6Ly9hdHMtZXh0ZXJuYWwtYXBpLmthcml5ZXIubmV0L2F1dGgvdG9rZW4=';
 
     // Define the payload for the request (userCode and password)
     let payload = {
