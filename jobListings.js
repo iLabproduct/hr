@@ -154,8 +154,9 @@
 
     function fetchJobDetails(jobId, sampleStyle, cardContainer) {
         let request = new XMLHttpRequest();
-        let url5 = `aHR0cHM6Ly9hdHMtZXh0ZXJuYWwtYXBpLmthcml5ZXIubmV0L2hybGluay1zZXJ2aWNlL2FwaS9qb2IvZ2V0am9iZGV0YWlsLw==${jobId}`;
-        var apiUrl = atob(url5);
+        var url5= 'aHR0cHM6Ly9hdHMtZXh0ZXJuYWwtYXBpLmthcml5ZXIubmV0L2hybGluay1zZXJ2aWNlL2FwaS9qb2IvZ2V0am9iZGV0YWlsLw==';
+        var url6= atob (url5);
+        const apiUrl = `${url6}${jobId}`;
         request.open('GET', apiUrl, true);
         request.setRequestHeader('Content-Type', 'application/json');
 
