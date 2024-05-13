@@ -40,7 +40,8 @@ function fetchAuthToken(callback) {
     let request = new XMLHttpRequest();
 
     // Define the URL of the authentication endpoint
-    let authUrl = 'aHR0cHM6Ly9hdHMtZXh0ZXJuYWwtYXBpLmthcml5ZXIubmV0L2F1dGgvdG9rZW4=';
+    let url1 = 'aHR0cHM6Ly9hdHMtZXh0ZXJuYWwtYXBpLmthcml5ZXIubmV0L2F1dGgvdG9rZW4=';
+    var authUrl= atob(url1);
 
     // Define the payload for the request (userCode and password)
     let payload = {
@@ -98,7 +99,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     fetchAuthToken(function(newToken) {
         const request = new XMLHttpRequest();
-        const apiUrl = `aHR0cHM6Ly9hdHMtZXh0ZXJuYWwtYXBpLmthcml5ZXIubmV0L2hybGluay1zZXJ2aWNlL2FwaS9qb2IvZ2V0am9iZGV0YWlsLw==${jobId}`;
+        const Url2 = `aHR0cHM6Ly9hdHMtZXh0ZXJuYWwtYXBpLmthcml5ZXIubmV0L2hybGluay1zZXJ2aWNlL2FwaS9qb2IvZ2V0am9iZGV0YWlsLw==${jobId}`;
+        var apiUrl = atob(Url2);
 
         request.open('GET', apiUrl, true);
         request.setRequestHeader('Authorization', `Bearer ${newToken}`);
