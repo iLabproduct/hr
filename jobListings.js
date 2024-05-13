@@ -1,7 +1,7 @@
 (function () {
-    const authTokenUrl = 'https://ats-external-api.kariyer.net/auth/token';
-    const jobFilterParametersUrl = 'https://ats-external-api.kariyer.net/hrlink-service/api/job/jobfilterparameters';
-    const jobSearchUrl = 'https://ats-external-api.kariyer.net/hrlink-service/api/job/search';
+    const authTokenUrl = 'aHR0cHM6Ly9hdHMtZXh0ZXJuYWwtYXBpLmthcml5ZXIubmV0L2F1dGgvdG9rZW4=';
+    const jobFilterParametersUrl = 'aHR0cHM6Ly9hdHMtZXh0ZXJuYWwtYXBpLmthcml5ZXIubmV0L2hybGluay1zZXJ2aWNlL2FwaS9qb2Ivam9iZmlsdGVycGFyYW1ldGVycw==';
+    const jobSearchUrl = 'aHR0cHM6Ly9hdHMtZXh0ZXJuYWwtYXBpLmthcml5ZXIubmV0L2hybGluay1zZXJ2aWNlL2FwaS9qb2Ivc2VhcmNo';
     const profileId = 1898;
     
  function formatDate(dateString) {
@@ -93,7 +93,7 @@
 
     function fetchAndDisplayPostings(token, jobData) {
         let request = new XMLHttpRequest();
-        let apiUrl = 'https://ats-external-api.kariyer.net/hrlink-service/api/job/search';
+        let apiUrl = 'aHR0cHM6Ly9hdHMtZXh0ZXJuYWwtYXBpLmthcml5ZXIubmV0L2hybGluay1zZXJ2aWNlL2FwaS9qb2Ivc2VhcmNo';
         let payload = {
             profileIds: [profileId],
             cities: jobData.selectedCity ? [jobData.selectedCity] : [],
@@ -149,7 +149,7 @@
 
     function fetchJobDetails(jobId, sampleStyle, cardContainer) {
         let request = new XMLHttpRequest();
-        let apiUrl = `https://ats-external-api.kariyer.net/hrlink-service/api/job/getjobdetail/${jobId}`;
+        let apiUrl = `aHR0cHM6Ly9hdHMtZXh0ZXJuYWwtYXBpLmthcml5ZXIubmV0L2hybGluay1zZXJ2aWNlL2FwaS9qb2IvZ2V0am9iZGV0YWlsLw==${jobId}`;
         request.open('GET', apiUrl, true);
         request.setRequestHeader('Content-Type', 'application/json');
 
